@@ -1,0 +1,224 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    animation: randomGradientFlow 6s ease-in-out infinite;
+    background: radial-gradient(
+        circle at 150% 150%, 
+        #4b4f84, #6a6f9e, #8e94c5, #b3aaff, #4e5d79
+    );
+    background-size: 200% 200%;
+}
+
+.contact-dropdown {
+    display: none;
+    position: absolute;
+    top: 120px;
+    right: 40px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.contact-dropdown.show {
+    display: flex;
+}
+
+.bubble {
+    background-color: #ffffff;
+    border-radius: 50%;
+    padding: 10px;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+}
+
+.bubble img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.contact-dropdown.show .bubble {
+    animation: bubbleSpring 0.5s ease-out forwards;
+}
+
+.bubble:hover {
+    transform: scale(1.1);  
+    box-shadow: 0 0 15px 2px #454cf6;  
+}
+
+@keyframes bubbleSpring {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    40% {
+        transform: scale(1.3);
+    }
+    60% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.btn:hover {
+    background: rgba(42, 41, 61, 1);
+    box-shadow: 0 0 10px 2px #454cf6;
+    color: #454cf6; 
+}
+
+.job-listings {
+    display: none;
+    margin-top: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.job-listing {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.job-listings.show {
+    display: flex;
+}
+
+footer {
+    display: none;
+}
+
+.transparent-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.banner-text {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    background: transparent;
+    border: 0px solid white;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: rgba(42, 41, 61, 1);
+    box-shadow: 0 0 10px 2px #454cf6;
+    color: #454cf6;
+}
+
+.glitter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    background: url('glitter.png');
+    opacity: 0.2;
+    animation: glitterEffect 2s infinite;
+}
+
+@keyframes glitterEffect {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+@keyframes randomGradientFlow {
+    0% {
+        background: radial-gradient(
+            circle at 150% 150%, 
+            #4b4f84, #6a6f9e, #8e94c5, #b3aaff, #4e5d79
+        );
+        background-size: 200% 200%;
+        background-position: center;
+    }
+    25% {
+        background: radial-gradient(
+            circle at 150% 150%, 
+            #6a6f9e, #8e94c5, #4b4f84, #b3aaff, #4e5d79
+        );
+        background-size: 200% 200%;
+        background-position: top left;
+    }
+    50% {
+        background: radial-gradient(
+            circle at 150% 150%, 
+            #8e94c5, #4b4f84, #6a6f9e, #b3aaff, #4e5d79
+        );
+        background-size: 200% 200%;
+        background-position: bottom right;
+    }
+    75% {
+        background: radial-gradient(
+            circle at 150% 150%, 
+            #b3aaff, #8e94c5, #6a6f9e, #4b4f84, #4e5d79
+        );
+        background-size: 200% 200%;
+        background-position: center;
+    }
+    100% {
+        background: radial-gradient(
+            circle at 150% 150%, 
+            #4b4f84, #6a6f9e, #8e94c5, #b3aaff, #4e5d79
+        );
+        background-size: 200% 200%;
+        background-position: top left;
+    }
+}
