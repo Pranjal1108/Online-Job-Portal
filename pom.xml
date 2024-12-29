@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Project details -->
+    <groupId>com.onlinejobportal</groupId>
+    <artifactId>Online-Job-Portal</artifactId>
+    <version>1.0.0</version>
+    <packaging>jar</packaging>
+
+    <name>Online Job Portal</name>
+    <description>A simple job portal with a Java backend</description>
+
+    <!-- Java version configuration -->
+    <properties>
+        <maven.compiler.source>22</maven.compiler.source>
+        <maven.compiler.target>23</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>9.1.0</version>
+            <scope>system</scope>
+            <systemPath>C:/Users/pranj/OneDrive/Documents/codes/JAVA codes/Oracle_JDK-22/Online job portal/OnlineJobPortal/lib/mysql-connector-j-9.1.0.jar</systemPath> 
+        </dependency>
+    </dependencies>
+
+    
+    <build>
+        <plugins>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+            </plugin>
+        </plugins>
+    </build>
+
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+</project>
