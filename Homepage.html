@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Web Page</title>
     <link rel="stylesheet" href="HomepageCSS.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@100;300&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -12,16 +14,22 @@
         <div class="banner-text">
             Jobify+
         </div>
-        <div class="nav-buttons">
+        <div class="nav-buttons" id="navButtons">
             <button id="jobs-button" class="btn">Jobs</button>
             <a href="Loginpage.html">
-                <button class="btn">Login</button>
+                <button class="btn" id="loginButton">Login</button>
             </a>
             <a href="Loginpage.html">
-                <button class="btn">Sign Up</button>
+                <button class="btn" id="signupButton">Sign Up</button>
             </a>
             <button id="contact-button" class="btn">Contact Us</button>
         </div>
+    </div>
+
+    <!-- Profile Section (Initially Hidden) -->
+    <div id="profileSection" style="display:none;">
+        <h2>Welcome, <span id="username">User</span>!</h2>
+        <button id="logoutButton" class="btn">Logout</button>
     </div>
 
     <div id="contact-dropdown" class="contact-dropdown">
@@ -39,24 +47,80 @@
         </a>
     </div>
 
-    <!-- Job Listings Section -->
-    <div class="job-listings">
-        <div class="job-listing">
-            <h3>Software Engineer</h3>
-            <p>We are looking for a passionate software engineer to join our dynamic team.</p>
-            <a href="#">Apply Now</a>
+    <div class="conveyor-belt-container">
+        <div class="conveyor-belt">
+            <a>Companies looking for employees: </a>
+            <div class="company">
+                <img src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png" alt="Google">
+                <p>Google</p>
+            </div>
+            <div class="company">
+                <img src="https://cdn1.iconfinder.com/data/icons/bootstrap-fill-vol-2/16/meta-512.png" alt="Company 2">
+                <p>Meta</p>
+            </div>
+            <div class="company">
+                <img src="https://cdn0.iconfinder.com/data/icons/car-brands/550/Mercedes_logo-512.png" alt="Company 3">
+                <p>Mercedes</p>
+            </div>
+            <div class= "company">
+                <img src="https://cdn0.iconfinder.com/data/icons/car-brands/550/BMW_logo-512.png">
+                <p>BMW</p>
+            </div>
+            <div class= "company">
+                <img src= "https://cdn4.iconfinder.com/data/icons/logo-cars/512/48.png">
+                <p>Audi</p>
+            </div>			
+            <div class= "company">
+                <img src="https://cdn0.iconfinder.com/data/icons/car-brands/550/Toyota_logo-512.png">
+                <p>Toyota</p>	
+            </div>
+            <div class= "company">
+                <img src="https://cdn0.iconfinder.com/data/icons/car-brands/550/Ford_logo-512.png">
+                <p>Ford</p>
+            </div>
+            <div class= "company">
+                <img src="https://cdn0.iconfinder.com/data/icons/car-brands/550/VW_logo-512.png">
+                <p>Volkswagen</p>
+            </div>
         </div>
-        <div class="job-listing">
-            <h3>UI/UX Designer</h3>
-            <p>Seeking a talented designer to enhance our website's user experience.</p>
-            <a href="#">Apply Now</a>
+    </div>
+
+    <div class="preferred-skills">
+        <h2>Most Preferred Skills Across All Industries</h2>
+        <div class="skills-grid">
+            <div class="skill-tile">Communication</div>
+            <div class="skill-tile">Problem Solving</div>
+            <div class="skill-tile">Leadership</div>
+            <div class="skill-tile">Teamwork</div>
+            <div class="skill-tile">Adaptability</div>
+            <div class="skill-tile">Creativity</div>
+            <div class="skill-tile">Technical Skills</div>
+            <div class="skill-tile">Project Management</div>
+            <div class="skill-tile">Data Analysis</div>
+            <div class="skill-tile">Time Management</div>
+        </div>
+    </div>
+
+    <div class="job-listings-container">
+        <div class="job-listings">
+            <a> Few Seats Left!!!</a>
+            <div class="job-listing">
+                <h3>Software Engineer</h3>
+                <p>We are looking for a passionate software engineer to join our dynamic team.</p>
+                <a href="#">Apply Now</a>
+            </div>
+            <div class="job-listing">
+                <h3>UI/UX Designer</h3>
+                <p>Seeking a talented designer to enhance our website's user experience.</p>
+                <a href="#">Apply Now</a>
+            </div>
         </div>
     </div>
 
     <footer>
         &copy; 2024 My Cool Website! Don't copy this !!
     </footer>
-    
+
     <script src="Homepagescript.js"></script>
 </body>
 </html>
