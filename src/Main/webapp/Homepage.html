@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Interactive Web Page</title>
+    <link href="HomepageCSS.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Genos:wght@100;300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- Transparent Banner Section -->
+<div class="transparent-banner">
+    <div class="banner-text">
+        Jobify+
+    </div>
+    <div class="nav-buttons" id="navButtons">
+        <button class="btn" id="jobs-button">Jobs</button>
+        <a href="Loginpage.html">
+            <button class="btn" id="loginButton">Login</button>
+        </a>
+        <a href="Loginpage.html">
+            <button class="btn" id="signupButton">Sign Up</button>
+        </a>
+        <button class="btn" id="contact-button">Contact Us</button>
+    </div>
+</div>
+
+<!-- Profile Section (Initially Hidden) -->
+<div id="profileSection" style="display:none;">
+    <h2>Welcome, <span id="username">User</span>!</h2>
+    <button class="btn" id="logoutButton">Logout</button>
+</div>
+
+<!-- Contact Dropdown Section -->
+<div class="contact-dropdown" id="contact-dropdown">
+    <a class="bubble" href="https://www.linkedin.com" target="_blank">
+        <img alt="LinkedIn" src="linkedin.png">
+    </a>
+    <a class="bubble" href="https://www.github.com" target="_blank">
+        <img alt="GitHub" src="github.png">
+    </a>
+    <a class="bubble" href="https://www.twitter.com" target="_blank">
+        <img alt="Twitter" src="twitter.png">
+    </a>
+    <a class="bubble" href="https://www.facebook.com" target="_blank">
+        <img alt="Facebook" src="facebook.png">
+    </a>
+</div>
+
+<!-- Conveyor Belt Section -->
+<div class="conveyor-belt-container">
+    <div class="conveyor-belt">
+        <a>Companies looking for employees: </a>
+        <div class="company">
+            <img alt="Google" src="https://cdn1.iconfinder.com/data/icons/google-s-logo/150/Google_Icons-09-512.png">
+            <p>Google</p>
+        </div>
+        <div class="company">
+            <img alt="Meta" src="https://cdn1.iconfinder.com/data/icons/bootstrap-fill-vol-2/16/meta-512.png">
+            <p>Meta</p>
+        </div>
+        <div class="company">
+            <img alt="Mercedes" src="https://cdn0.iconfinder.com/data/icons/car-brands/550/Mercedes_logo-512.png">
+            <p>Mercedes</p>
+        </div>
+        <div class="company">
+            <img alt="BMW" src="https://cdn0.iconfinder.com/data/icons/car-brands/550/BMW_logo-512.png">
+            <p>BMW</p>
+        </div>
+        <div class="company">
+            <img alt="Audi" src="https://cdn4.iconfinder.com/data/icons/logo-cars/512/48.png">
+            <p>Audi</p>
+        </div>
+        <div class="company">
+            <img alt="Toyota" src="https://cdn0.iconfinder.com/data/icons/car-brands/550/Toyota_logo-512.png">
+            <p>Toyota</p>
+        </div>
+        <div class="company">
+            <img alt="Ford" src="https://cdn0.iconfinder.com/data/icons/car-brands/550/Ford_logo-512.png">
+            <p>Ford</p>
+        </div>
+        <div class="company">
+            <img alt="Volkswagen" src="https://cdn0.iconfinder.com/data/icons/car-brands/550/VW_logo-512.png">
+            <p>Volkswagen</p>
+        </div>
+    </div>
+</div>
+
+<!-- Preferred Skills Section -->
+<div class="preferred-skills">
+    <h2>Most Preferred Skills Across All Industries</h2>
+    <div class="skills-grid">
+        <div class="skill-tile">Communication</div>
+        <div class="skill-tile">Problem Solving</div>
+        <div class="skill-tile">Leadership</div>
+        <div class="skill-tile">Teamwork</div>
+        <div class="skill-tile">Adaptability</div>
+        <div class="skill-tile">Creativity</div>
+        <div class="skill-tile">Technical Skills</div>
+        <div class="skill-tile">Project Management</div>
+        <div class="skill-tile">Data Analysis</div>
+        <div class="skill-tile">Time Management</div>
+    </div>
+</div>
+
+<div id="profileSection" style="display:none;">
+    <h2>Welcome, <span id="username">User</span>!</h2>
+    <button class="btn" id="logoutButton">Logout</button>
+</div>
+
+<!-- Job Listings Section -->
+<div class="job-listings-container">
+    <div class="job-listings">
+        <a> Few Seats Left!!!</a>
+        <div class="job-listing">
+            <h3>Software Engineer</h3>
+            <p>We are looking for a passionate software engineer to join our dynamic team.</p>
+            <a href="#">Apply Now</a>
+        </div>
+        <div class="job-listing">
+            <h3>UI/UX Designer</h3>
+            <p>Seeking a talented designer to enhance our website's user experience.</p>
+            <a href="#">Apply Now</a>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    &copy; 2024 My Cool Website! Don't copy this !!
+</footer>
+
+<script src="Homepagescript.js"></script>
+</body>
+</html>

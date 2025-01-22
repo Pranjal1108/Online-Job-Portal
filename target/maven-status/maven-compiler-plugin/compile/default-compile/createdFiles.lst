@@ -1,0 +1,9 @@
+com\onlinejobportal\DBUtil.class
+com\onlinejobportal\UserDAO1.class
+com\onlinejobportal\User.class
+com\onlinejobportal\Main.class
+com\onlinejobportal\UserServlet.class
+com\onlinejobportal\PasswordUtil.class
+com\onlinejobportal\JobServlet.class
+com\onlinejobportal\SignUpServlet.class
+com\onlinejobportal\Job.class
