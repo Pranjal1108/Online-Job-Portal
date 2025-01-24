@@ -75,7 +75,6 @@ function createCustomCursor() {
 
     document.addEventListener('DOMContentLoaded', displayAppliedJobs);
 
-
     function submitJobApplication(jobId) {
         storeAppliedJobs(jobId);
         displayAppliedJobs();
