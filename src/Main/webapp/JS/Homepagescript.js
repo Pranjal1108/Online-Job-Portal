@@ -22,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    createStars();
 
     jobsButton.addEventListener("click", function () {
         jobListings.classList.toggle("hidden");
@@ -50,14 +49,13 @@ function createCustomCursor() {
         cursor.style.top = `${mouseY}px`;
     });
 
-// Store applied jobs in local storage
     function storeAppliedJobs(jobId) {
         const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
         appliedJobs.push(jobId);
         localStorage.setItem('appliedJobs', JSON.stringify(appliedJobs));
     }
 
-// Display applied jobs
+
     function displayAppliedJobs() {
         const appliedJobsList = document.getElementById('applied-jobs-list');
         const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs')) || [];
@@ -75,11 +73,9 @@ function createCustomCursor() {
         return {title: 'Job Title'};
     }
 
-// Call displayAppliedJobs when the page loads
     document.addEventListener('DOMContentLoaded', displayAppliedJobs);
 
-// Call storeAppliedJobs when a user applies for a job
-// Assume you have a function to handle job application submission
+
     function submitJobApplication(jobId) {
         storeAppliedJobs(jobId);
         displayAppliedJobs();
