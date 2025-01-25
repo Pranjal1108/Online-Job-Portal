@@ -22,7 +22,7 @@
         <configuration>
           <archive>
             <manifestEntries>
-              <Main-Class>com.onlinejobportal.Main</Main-Class>
+              <mainClass>com.onlinejobportal.Main</mainClass>
             </manifestEntries>
           </archive>
         </configuration>
@@ -36,6 +36,21 @@
             <goals>
               <goal>shade</goal>
             </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.5.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>java</goal>
+            </goals>
+            <configuration>
+              <mainClass>com.onlinejobportal.Main</mainClass>
+            </configuration>
           </execution>
         </executions>
       </plugin>

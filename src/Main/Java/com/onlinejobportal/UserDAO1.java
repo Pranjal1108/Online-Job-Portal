@@ -2,7 +2,6 @@ package com.onlinejobportal;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,8 +10,16 @@ public class UserDAO1 {
 
     private static final Logger logger = LoggerFactory.getLogger(UserDAO1.class);
 
+    private boolean isValidUser(User user) {
+        return user != null &&
+                user.getUsername() != null &&
+                user.getPassword() != null &&
+                user.getEmail() != null &&
+                user.getRole() != null;
+    }
+
     public boolean addUser(User user) {
-        if (user == null || user.getUsername() == null || user.getPassword() == null || user.getEmail() == null || user.getRole() == null) {
+        if (!isValidUser(user)) {
             logger.warn("Invalid user data provided");
             return false;
         }
@@ -30,7 +37,7 @@ public class UserDAO1 {
             return rowsInserted > 0;
 
         } catch (SQLException e) {
-            logger.error("Error adding user to database", e);
+            logger.error("Error adding user to the database", e);
         }
         return false;
     }
@@ -52,6 +59,8 @@ public class UserDAO1 {
                         rs.getString("role"),
                         rs.getTimestamp("created_at")
                 );
+            } else {
+                logger.info("No user found with ID: {}", userId);
             }
 
         } catch (SQLException e) {
@@ -85,9 +94,37 @@ public class UserDAO1 {
         return users;
     }
 
+    public List<User> getAllUsers(int limit, int offset) {
+        List<User> users = new ArrayList<>();
+        String query = "SELECT * FROM Users LIMIT ? OFFSET ?";
+        try (Connection conn = DBUtil.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(query)) {
+
+            stmt.setInt(1, limit);
+            stmt.setInt(2, offset);
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                User user = new User(
+                        rs.getInt("user_id"),
+                        rs.getString("username"),
+                        rs.getString("password"),
+                        rs.getString("email"),
+                        rs.getString("role"),
+                        rs.getTimestamp("created_at")
+                );
+                users.add(user);
+            }
+
+        } catch (SQLException e) {
+            logger.error("Error fetching users with pagination", e);
+        }
+        return users;
+    }
+
     public boolean updateUser(User user) {
-        if (user == null || user.getUserId() <= 0 || user.getUsername() == null || user.getPassword() == null || user.getEmail() == null || user.getRole() == null) {
-            logger.warn("Invalid user data provided for update");
+        if (!isValidUser(user) || user.getUserId() <= 0) {
+            logger.info("Invalid user data provided for update: {}", user);
             return false;
         }
 
@@ -121,7 +158,7 @@ public class UserDAO1 {
                 return rs.getInt(1) > 0; // Returns true if count > 0
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error checking if email is registered", e);
         }
         return false;
     }
